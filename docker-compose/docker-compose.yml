@@ -1,0 +1,13 @@
+version: '3.0'
+
+services:
+    dino:
+        build: .
+        image: dino
+        shm_size: '16gb'
+        ports:
+          - '10200:22'
+        volumes:
+          - ../:/workdir
+          - ~/.ssh/authorized_keys:/root/authorized_keys_volume
+        container_name: dino
